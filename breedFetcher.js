@@ -3,7 +3,7 @@ const request = require('request');
 const fetchBreedDescription = function (breedName, callback) {
   request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName}`, (error, res, body) => {
     if (error) {
-      callback('Request failed cannot find!')
+      callback('Request failed cannot find!');
     }
     const data = JSON.parse(body);
     // console.log(typeof data)
@@ -14,6 +14,6 @@ const fetchBreedDescription = function (breedName, callback) {
       callback("Failed to find requested data", null);
     }
   });
-}
+};
 
 module.exports = { fetchBreedDescription };
